@@ -1,0 +1,486 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+// ── Placeholder data (Alex: replace with your real info) ──
+
+const stats = [
+  { value: "150+", label: "Students Helped" },
+  { value: "4.8★", label: "Avg Rating" },
+  { value: "120+", label: "Avg SAT Point Increase" },
+  { value: "Est. 2024", label: "Serving Families Since" },
+];
+
+const services = [
+  {
+    title: "STEM Tutoring",
+    grades: "Grades 6–12",
+    description: "Math, physics, chemistry, and biology support tailored to your child's curriculum. We build deep understanding, not just memorization.",
+    icon: "🔬",
+  },
+  {
+    title: "SAT Prep",
+    grades: "Grades 10–12",
+    description: "Strategic test prep that targets weaknesses and builds confidence. Our students see an average 120+ point score increase.",
+    icon: "📈",
+  },
+  {
+    title: "ACT Prep",
+    grades: "Grades 10–12",
+    description: "Comprehensive ACT preparation covering all four sections with timed practice tests and personalized study plans.",
+    icon: "🎯",
+  },
+];
+
+const testimonials = [
+  {
+    quote: "My son went from a C in Algebra II to an A- in just one semester. The tutors really know how to connect with teens and make math click.",
+    name: "Sarah M.",
+    context: "Parent of 10th grader",
+  },
+  {
+    quote: "Our daughter raised her SAT score by 150 points after working with Achieve More Academics. The structured approach and practice tests made all the difference.",
+    name: "David & Lisa R.",
+    context: "Parent of 12th grader",
+  },
+  {
+    quote: "Finally found a tutoring service that actually keeps my kid engaged. The online sessions are convenient and the tutors are patient and knowledgeable.",
+    name: "Jennifer K.",
+    context: "Parent of 8th grader",
+  },
+];
+
+const faqs = [
+  {
+    q: "What subjects do you offer tutoring in?",
+    a: "We offer tutoring in all core STEM subjects — math (pre-algebra through calculus), physics, chemistry, and biology — as well as comprehensive SAT and ACT test preparation.",
+  },
+  {
+    q: "Are sessions online or in-person?",
+    a: "Our sessions are primarily held online via video call, making it convenient for families with busy schedules. We use interactive whiteboards and screen sharing to keep sessions engaging.",
+  },
+  {
+    q: "How much do sessions cost?",
+    a: "Session rates vary by subject and package. We offer individual sessions as well as discounted multi-session packages. Contact us for a free consultation and we'll provide a custom quote based on your child's needs.",
+  },
+  {
+    q: "How are students matched with tutors?",
+    a: "We match students with tutors based on subject expertise, learning style, and personality fit. All our tutors are thoroughly vetted for both subject knowledge and teaching ability.",
+  },
+  {
+    q: "What grades do you work with?",
+    a: "We work with students in grades 6 through 12. Our STEM tutoring covers middle and high school curriculum, while SAT/ACT prep is typically for students in grades 10–12.",
+  },
+  {
+    q: "How do I get started?",
+    a: "Simply book a free consultation using the scheduling tool on this page, or fill out our contact form. We'll discuss your child's needs and create a personalized learning plan.",
+  },
+];
+
+const steps = [
+  { number: "1", title: "Book a Free Consultation", description: "Tell us about your child's goals and challenges. We'll recommend the right plan." },
+  { number: "2", title: "Get a Custom Plan", description: "We match your student with the perfect tutor and build a personalized learning roadmap." },
+  { number: "3", title: "Watch Them Achieve More", description: "See grades improve, confidence grow, and test scores rise with consistent, expert support." },
+];
+
+// Placeholder URLs — replace with real ones
+const calendlyUrl = "https://calendly.com/achievemoreacademics";
+const web3formsKey = "b3871ac4-e038-4988-a0f8-2586434f3e97";
+---
+
+<Layout>
+  <!-- ═══════════════════ HEADER ═══════════════════ -->
+  <header id="header" class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200 transition-shadow">
+    <nav class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="#" class="flex items-center gap-2 font-bold text-xl text-navy">
+        <span class="text-gold">✦</span> Achieve More Academics
+      </a>
+
+      <!-- Desktop Nav -->
+      <div class="hidden md:flex items-center gap-6 text-sm font-medium text-charcoal">
+        <a href="#services" class="hover:text-navy transition-colors">Services</a>
+        <a href="#about" class="hover:text-navy transition-colors">About</a>
+        <a href="#results" class="hover:text-navy transition-colors">Results</a>
+        <a href="#faq" class="hover:text-navy transition-colors">FAQ</a>
+        <a href="#contact" class="hover:text-navy transition-colors">Contact</a>
+        <a href="#book" class="ml-2 px-5 py-2 bg-gold text-white font-semibold rounded-lg hover:bg-gold-dark transition-colors">
+          Book Now
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-btn" class="md:hidden p-2 text-navy" aria-label="Open menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </nav>
+
+    <!-- Mobile Nav -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200 px-4 pb-4">
+      <div class="flex flex-col gap-3 pt-3 text-sm font-medium text-charcoal">
+        <a href="#services" class="mobile-nav-link py-2 hover:text-navy">Services</a>
+        <a href="#about" class="mobile-nav-link py-2 hover:text-navy">About</a>
+        <a href="#results" class="mobile-nav-link py-2 hover:text-navy">Results</a>
+        <a href="#faq" class="mobile-nav-link py-2 hover:text-navy">FAQ</a>
+        <a href="#contact" class="mobile-nav-link py-2 hover:text-navy">Contact</a>
+        <a href="#book" class="mobile-nav-link mt-1 px-5 py-2.5 bg-gold text-white font-semibold rounded-lg text-center hover:bg-gold-dark transition-colors">
+          Book Now
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ═══════════════════ HERO ═══════════════════ -->
+    <section id="hero" class="pt-28 pb-16 md:pt-36 md:pb-24 bg-gradient-to-br from-navy to-navy-dark text-white">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 text-center">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight">
+          Help Your Child Master STEM
+          <span class="block text-gold mt-2">& Ace the SAT</span>
+        </h1>
+        <p class="mt-6 text-lg md:text-xl text-white/80 max-w-2xl mx-auto leading-relaxed">
+          Personalized online tutoring for middle & high school students. Expert tutors, proven methods, real results.
+        </p>
+        <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="#book" class="px-8 py-3.5 bg-gold text-white font-bold rounded-lg text-lg hover:bg-gold-dark transition-colors shadow-lg">
+            Book a Free Consultation
+          </a>
+          <a href="#services" class="px-8 py-3.5 border-2 border-white/30 text-white font-semibold rounded-lg text-lg hover:bg-white/10 transition-colors">
+            Explore Services
+          </a>
+        </div>
+        <p class="mt-8 text-sm text-white/60">
+          Trusted by 150+ families across the country
+        </p>
+      </div>
+    </section>
+
+    <!-- ═══════════════════ STATS BAR ═══════════════════ -->
+    <section class="bg-light border-y border-gray-200">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 py-8 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        {stats.map((stat) => (
+          <div>
+            <div class="text-2xl md:text-3xl font-extrabold text-navy">{stat.value}</div>
+            <div class="text-sm text-charcoal/70 mt-1">{stat.label}</div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- ═══════════════════ SERVICES ═══════════════════ -->
+    <section id="services" class="py-16 md:py-24">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-navy">What We Offer</h2>
+          <p class="mt-3 text-charcoal/70 max-w-xl mx-auto">Comprehensive academic support designed to meet your child exactly where they are.</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+          {services.map((service) => (
+            <div class="bg-white rounded-xl border border-gray-200 p-8 hover:shadow-lg transition-shadow">
+              <div class="text-4xl mb-4">{service.icon}</div>
+              <h3 class="text-xl font-bold text-navy">{service.title}</h3>
+              <p class="text-sm text-gold font-semibold mt-1">{service.grades}</p>
+              <p class="mt-3 text-charcoal/80 leading-relaxed">{service.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════ ABOUT / OUR STORY ═══════════════════ -->
+    <section id="about" class="py-16 md:py-24 bg-light">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <!-- Photo placeholder -->
+          <div class="flex justify-center">
+            <div class="w-72 h-72 md:w-80 md:h-80 rounded-2xl bg-navy/10 flex items-center justify-center text-navy/40 text-sm border-2 border-dashed border-navy/20">
+              <!-- Replace this div with: <img src="/alex-photo.jpg" alt="Alex, founder of Achieve More Academics" class="w-72 h-72 md:w-80 md:h-80 rounded-2xl object-cover" /> -->
+              Alex's Photo Here
+            </div>
+          </div>
+          <!-- Story -->
+          <div>
+            <h2 class="text-3xl md:text-4xl font-bold text-navy">Our Story</h2>
+            <p class="mt-4 text-charcoal/80 leading-relaxed">
+              <!-- PLACEHOLDER: Alex, replace this with your real story -->
+              Hi, I'm Alex — the founder of Achieve More Academics. I started tutoring because I saw too many bright students struggling not because they lacked ability, but because they lacked the right support.
+            </p>
+            <p class="mt-4 text-charcoal/80 leading-relaxed">
+              After years of helping students break through in math and science, I built Achieve More Academics to reach more families. Our small team of carefully selected tutors shares one mission: help every student realize what they're capable of.
+            </p>
+            <p class="mt-4 text-charcoal/80 leading-relaxed">
+              We believe learning should be personal, engaging, and empowering. That's why every student gets a customized plan — no cookie-cutter worksheets, no one-size-fits-all lectures.
+            </p>
+            <div class="mt-6 flex items-center gap-4 text-sm">
+              <div class="px-4 py-2 bg-navy/10 rounded-lg text-navy font-semibold">4 Expert Tutors</div>
+              <div class="px-4 py-2 bg-green/10 rounded-lg text-green font-semibold">100% Online</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════ RESULTS & TESTIMONIALS ═══════════════════ -->
+    <section id="results" class="py-16 md:py-24">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-navy">What Parents Are Saying</h2>
+          <p class="mt-3 text-charcoal/70 max-w-xl mx-auto">Real results from real families. Here's what it's like to work with us.</p>
+          <p class="mt-1 text-xs text-charcoal/40">(Placeholder testimonials — replace with real ones)</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+          {testimonials.map((t) => (
+            <div class="bg-light rounded-xl p-8 border border-gray-200">
+              <div class="text-gold text-2xl mb-3">★★★★★</div>
+              <blockquote class="text-charcoal/80 leading-relaxed italic">"{t.quote}"</blockquote>
+              <div class="mt-4 pt-4 border-t border-gray-200">
+                <div class="font-semibold text-navy">{t.name}</div>
+                <div class="text-sm text-charcoal/60">{t.context}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div class="mt-12 text-center">
+          <a href="#book" class="px-8 py-3.5 bg-navy text-white font-bold rounded-lg text-lg hover:bg-navy-light transition-colors inline-block">
+            Start Your Child's Journey
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════ HOW IT WORKS ═══════════════════ -->
+    <section class="py-16 md:py-24 bg-light">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-navy">How It Works</h2>
+          <p class="mt-3 text-charcoal/70 max-w-xl mx-auto">Getting started is easy. Here's what to expect.</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+          {steps.map((step) => (
+            <div class="text-center">
+              <div class="w-14 h-14 bg-gold text-white text-2xl font-bold rounded-full flex items-center justify-center mx-auto">
+                {step.number}
+              </div>
+              <h3 class="mt-4 text-xl font-bold text-navy">{step.title}</h3>
+              <p class="mt-2 text-charcoal/70 leading-relaxed">{step.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════ FAQ ═══════════════════ -->
+    <section id="faq" class="py-16 md:py-24">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-navy">Frequently Asked Questions</h2>
+        </div>
+        <div class="space-y-4">
+          {faqs.map((faq, i) => (
+            <details class="group bg-light rounded-xl border border-gray-200 overflow-hidden">
+              <summary class="flex items-center justify-between cursor-pointer px-6 py-4 font-semibold text-navy hover:bg-light-alt transition-colors">
+                <span>{faq.q}</span>
+                <svg class="w-5 h-5 text-navy/50 shrink-0 ml-4 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </summary>
+              <div class="px-6 pb-4 text-charcoal/80 leading-relaxed">{faq.a}</div>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════ BOOK A SESSION (Calendly) ═══════════════════ -->
+    <section id="book" class="py-16 md:py-24 bg-navy text-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-10">
+          <h2 class="text-3xl md:text-4xl font-bold">Book a Free Consultation</h2>
+          <p class="mt-3 text-white/70 max-w-xl mx-auto">Pick a time that works for you. We'll discuss your child's needs and how we can help.</p>
+        </div>
+        <!-- Calendly Inline Widget -->
+        <div class="bg-white rounded-xl overflow-hidden">
+          <div class="calendly-inline-widget" data-url={calendlyUrl} style="min-width:320px;height:630px;"></div>
+          <script is:inline src="https://assets.calendly.com/assets/external/widget.js" async></script>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════ CONTACT FORM ═══════════════════ -->
+    <section id="contact" class="py-16 md:py-24">
+      <div class="max-w-2xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-10">
+          <h2 class="text-3xl md:text-4xl font-bold text-navy">Get in Touch</h2>
+          <p class="mt-3 text-charcoal/70 max-w-xl mx-auto">Have questions? Send us a message and we'll get back to you within 24 hours.</p>
+        </div>
+        <form action="https://api.web3forms.com/submit" method="POST" class="space-y-5">
+          <!-- Web3Forms access key — replace with your real key -->
+          <input type="hidden" name="access_key" value={web3formsKey} />
+          <input type="hidden" name="subject" value="New Inquiry from Achieve More Academics Website" />
+          <!-- Honeypot -->
+          <input type="checkbox" name="botcheck" class="hidden" />
+
+          <div class="grid sm:grid-cols-2 gap-5">
+            <div>
+              <label for="name" class="block text-sm font-semibold text-navy mb-1.5">Parent/Guardian Name</label>
+              <input type="text" name="name" id="name" required
+                class="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white text-charcoal placeholder-charcoal/40 focus:ring-2 focus:ring-gold focus:border-gold outline-none transition"
+                placeholder="Jane Smith" />
+            </div>
+            <div>
+              <label for="email" class="block text-sm font-semibold text-navy mb-1.5">Email</label>
+              <input type="email" name="email" id="email" required
+                class="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white text-charcoal placeholder-charcoal/40 focus:ring-2 focus:ring-gold focus:border-gold outline-none transition"
+                placeholder="jane@example.com" />
+            </div>
+          </div>
+          <div class="grid sm:grid-cols-2 gap-5">
+            <div>
+              <label for="phone" class="block text-sm font-semibold text-navy mb-1.5">Phone (optional)</label>
+              <input type="tel" name="phone" id="phone"
+                class="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white text-charcoal placeholder-charcoal/40 focus:ring-2 focus:ring-gold focus:border-gold outline-none transition"
+                placeholder="(555) 123-4567" />
+            </div>
+            <div>
+              <label for="grade" class="block text-sm font-semibold text-navy mb-1.5">Student's Grade Level</label>
+              <select name="grade" id="grade"
+                class="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white text-charcoal focus:ring-2 focus:ring-gold focus:border-gold outline-none transition">
+                <option value="">Select grade...</option>
+                <option>6th Grade</option>
+                <option>7th Grade</option>
+                <option>8th Grade</option>
+                <option>9th Grade</option>
+                <option>10th Grade</option>
+                <option>11th Grade</option>
+                <option>12th Grade</option>
+              </select>
+            </div>
+          </div>
+          <div>
+            <label for="service" class="block text-sm font-semibold text-navy mb-1.5">What do you need help with?</label>
+            <select name="service" id="service"
+              class="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white text-charcoal focus:ring-2 focus:ring-gold focus:border-gold outline-none transition">
+              <option value="">Select a service...</option>
+              <option>STEM Tutoring (Math)</option>
+              <option>STEM Tutoring (Science)</option>
+              <option>SAT Prep</option>
+              <option>ACT Prep</option>
+              <option>Multiple Services</option>
+              <option>Not sure — need guidance</option>
+            </select>
+          </div>
+          <div>
+            <label for="message" class="block text-sm font-semibold text-navy mb-1.5">Message</label>
+            <textarea name="message" id="message" rows="4"
+              class="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white text-charcoal placeholder-charcoal/40 focus:ring-2 focus:ring-gold focus:border-gold outline-none transition resize-y"
+              placeholder="Tell us about your child's goals, challenges, or any questions you have..."></textarea>
+          </div>
+          <button type="submit"
+            class="w-full py-3.5 bg-gold text-white font-bold rounded-lg text-lg hover:bg-gold-dark transition-colors">
+            Send Message
+          </button>
+          <p class="text-xs text-charcoal/50 text-center">We'll never share your information. Expect a response within 24 hours.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ═══════════════════ FOOTER ═══════════════════ -->
+  <footer class="bg-navy-dark text-white/70 py-12">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="grid md:grid-cols-3 gap-8">
+        <div>
+          <div class="font-bold text-white text-lg"><span class="text-gold">✦</span> Achieve More Academics</div>
+          <p class="mt-3 text-sm leading-relaxed">Expert STEM tutoring and SAT/ACT prep for middle and high school students.</p>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-3">Quick Links</h4>
+          <div class="flex flex-col gap-2 text-sm">
+            <a href="#services" class="hover:text-gold transition-colors">Services</a>
+            <a href="#about" class="hover:text-gold transition-colors">About</a>
+            <a href="#results" class="hover:text-gold transition-colors">Results</a>
+            <a href="#faq" class="hover:text-gold transition-colors">FAQ</a>
+            <a href="#book" class="hover:text-gold transition-colors">Book a Session</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-3">Contact</h4>
+          <div class="flex flex-col gap-2 text-sm">
+            <!-- Replace with real contact info -->
+            <p>info@achievemoreacademics.com</p>
+            <p>(555) 123-4567</p>
+          </div>
+        </div>
+      </div>
+      <div class="mt-10 pt-6 border-t border-white/10 text-center text-sm">
+        &copy; {new Date().getFullYear()} Achieve More Academics. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════ SCRIPTS ═══════════════════ -->
+  <script>
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+
+    menuBtn?.addEventListener('click', () => {
+      const isOpen = !mobileMenu?.classList.contains('hidden');
+      mobileMenu?.classList.toggle('hidden');
+      if (isOpen) {
+        menuIcon?.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+      } else {
+        menuIcon?.setAttribute('d', 'M6 18L18 6M6 6l12 12');
+      }
+    });
+
+    // Close mobile menu on link click
+    document.querySelectorAll('.mobile-nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu?.classList.add('hidden');
+        menuIcon?.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+      });
+    });
+
+    // Header shadow on scroll
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 10) {
+        header?.classList.add('shadow-md');
+      } else {
+        header?.classList.remove('shadow-md');
+      }
+    });
+
+    // Scroll-triggered fade-in animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-in');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('section').forEach(section => {
+      section.classList.add('animate-section');
+      observer.observe(section);
+    });
+  </script>
+
+  <style>
+    .animate-section {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .animate-in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    /* Keep header always visible */
+    #header { opacity: 1 !important; transform: none !important; }
+  </style>
+</Layout>
