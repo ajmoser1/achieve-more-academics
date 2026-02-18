@@ -4,10 +4,9 @@ import Layout from '../layouts/Layout.astro';
 // ── Placeholder data (Alex: replace with your real info) ──
 
 const stats = [
-  { value: "150+", label: "Students Helped" },
-  { value: "4.8★", label: "Avg Rating" },
-  { value: "120+", label: "Avg SAT Point Increase" },
-  { value: "Est. 2024", label: "Serving Families Since" },
+  { value: "20+", label: "Students Helped" },
+  { value: "5.0★", label: "Rating" },
+  { value: "Dec. 2024", label: "Serving Families Since" },
 ];
 
 const services = [
@@ -19,13 +18,13 @@ const services = [
   },
   {
     title: "SAT Prep",
-    grades: "Grades 10–12",
+    grades: "Grades 9–12",
     description: "Strategic test prep that targets weaknesses and builds confidence. Our students see an average 120+ point score increase.",
     icon: "📈",
   },
   {
     title: "ACT Prep",
-    grades: "Grades 10–12",
+    grades: "Grades 9–12",
     description: "Comprehensive ACT preparation covering all four sections with timed practice tests and personalized study plans.",
     icon: "🎯",
   },
@@ -33,20 +32,16 @@ const services = [
 
 const testimonials = [
   {
-    quote: "My son went from a C in Algebra II to an A- in just one semester. The tutors really know how to connect with teens and make math click.",
-    name: "Sarah M.",
-    context: "Parent of 10th grader",
+    quote: "Alex was easy to coordinate with and very helpful with improving my son's math confidence. He was wonderful at explaining concepts and always made tutoring enjoyable. I would highly recommend him as a tutor.",
+    name: "Heidi M.",
+    context: "Parent of 6th grader",
   },
   {
-    quote: "Our daughter raised her SAT score by 150 points after working with Achieve More Academics. The structured approach and practice tests made all the difference.",
-    name: "David & Lisa R.",
-    context: "Parent of 12th grader",
-  },
-  {
-    quote: "Finally found a tutoring service that actually keeps my kid engaged. The online sessions are convenient and the tutors are patient and knowledgeable.",
-    name: "Jennifer K.",
-    context: "Parent of 8th grader",
-  },
+    quote: "Alex tutored two of my children. Math was our main focus, but Alex stepped in wherever they needed support—coaching my son through an English assignment, prepping my daughter before biology tests, and help strengthen their English essays. He was consistently punctual and fully attentive, and he taught in a way that made challenging topics understandable. Most importantly, he made the kids feel comfortable and confident. Their grades—and their mindset—improved. We’re thrilled to continue with him and recommend him wholeheartedly",
+    name: "Marya K.",
+    context: "Parent of 7th and 9th grader",
+  }
+
 ];
 
 const faqs = [
@@ -204,13 +199,13 @@ const web3formsKey = "b3871ac4-e038-4988-a0f8-2586434f3e97";
             <h2 class="text-3xl md:text-4xl font-bold text-navy">Our Story</h2>
             <p class="mt-4 text-charcoal/80 leading-relaxed">
               <!-- PLACEHOLDER: Alex, replace this with your real story -->
-              Hi, I'm Alex — the founder of Achieve More Academics. I started tutoring because I saw too many bright students struggling not because they lacked ability, but because they lacked the right support.
+              Hi, I'm Alex — the founder of Achieve More Academics. After working at Mathnasium, I felt frustrated with the curriculum I had to teach. It wasn't didn't really work forthe kids or their learning styles.
             </p>
             <p class="mt-4 text-charcoal/80 leading-relaxed">
-              After years of helping students break through in math and science, I built Achieve More Academics to reach more families. Our small team of carefully selected tutors shares one mission: help every student realize what they're capable of.
+              I wanted to create a tutoring service personalized to each student's needs and learning styles. Most of all, I wanted them to develop their metacognition, their ability to review their own thought process.
             </p>
             <p class="mt-4 text-charcoal/80 leading-relaxed">
-              We believe learning should be personal, engaging, and empowering. That's why every student gets a customized plan — no cookie-cutter worksheets, no one-size-fits-all lectures.
+              I believe learning should be personal, engaging, and empowering. That's why every student gets a customized plan — no cookie-cutter worksheets, no one-size-fits-all lectures.
             </p>
             <div class="mt-6 flex items-center gap-4 text-sm">
               <div class="px-4 py-2 bg-navy/10 rounded-lg text-navy font-semibold">4 Expert Tutors</div>
@@ -227,7 +222,7 @@ const web3formsKey = "b3871ac4-e038-4988-a0f8-2586434f3e97";
         <div class="text-center mb-12">
           <h2 class="text-3xl md:text-4xl font-bold text-navy">What Parents Are Saying</h2>
           <p class="mt-3 text-charcoal/70 max-w-xl mx-auto">Real results from real families. Here's what it's like to work with us.</p>
-          <p class="mt-1 text-xs text-charcoal/40">(Placeholder testimonials — replace with real ones)</p>
+          <p class="mt-1 text-xs text-charcoal/40">Alex tutored two of my children, a high school freshman and a 7th grader in middle school. Math was our main focus, but Alex stepped in wherever they needed support—coaching my son through an English assignment, prepping my daughter before biology tests, and help strengthen their English essays. He was consistently punctual and fully attentive, and he taught in a way that made challenging topics understandable. Most importantly, he made the kids feel comfortable and confident. Their grades—and their mindset—improved. Now that he’s a college freshman offering online tutoring, we’re thrilled to continue with him and recommend him wholeheartedly.</p>
         </div>
         <div class="grid md:grid-cols-3 gap-8">
           {testimonials.map((t) => (
@@ -243,7 +238,7 @@ const web3formsKey = "b3871ac4-e038-4988-a0f8-2586434f3e97";
         </div>
         <div class="mt-12 text-center">
           <a href="#book" class="px-8 py-3.5 bg-navy text-white font-bold rounded-lg text-lg hover:bg-navy-light transition-colors inline-block">
-            Start Your Child's Journey
+            Help Your Child Succeed!
           </a>
         </div>
       </div>
